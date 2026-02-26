@@ -24,11 +24,11 @@ processFile (fileUtils.ts)
 ├── getProviderForTask('addLinks', settings)
 ├── call[Provider]API(prompt, chunk)
 ├── createConceptNotes(settings, concepts, filename)
-�?  ├── normalizeNameForFilePath(concept)
-�?  └── write_file(notePath, content)
+│   ├── normalizeNameForFilePath(concept)
+│   └── write_file(notePath, content)
 ├── handleDuplicates(content, settings)
 ├── cleanupLatexDelimiters(content)
-├── refineMermaidBlocks(content)  �?AUTO-FIX
+├── refineMermaidBlocks(content)  ← AUTO-FIX
 └── saveOrMoveProcessedFile(settings, inputPath, content)
     └── write_file(outputPath, content)
 ```

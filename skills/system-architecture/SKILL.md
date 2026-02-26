@@ -77,9 +77,9 @@ processFile
 ├── getProviderForTask('addLinks')
 ├── call[Provider]API (callDeepSeekAPI, callOpenAIApi, etc.)
 ├── createConceptNotes
-�?└── normalizeNameForFilePath
+│ └── normalizeNameForFilePath
 ├── handleDuplicates
-�?└── findDuplicates
+│ └── findDuplicates
 ├── cleanupLatexDelimiters
 ├── refineMermaidBlocks (AUTO-FIX)
 └── saveOrMoveProcessedFile
@@ -92,9 +92,9 @@ processFile
 
 generateContentForTitle
 ├── \_performResearch (optional, if enabled)
-�?├── SearchManager.getProvider
-�?├── TavilyProvider.search / DuckDuckGoProvider.search
-�?└── fetchContentFromUrl
+│ ├── SearchManager.getProvider
+│ ├── TavilyProvider.search / DuckDuckGoProvider.search
+│ └── fetchContentFromUrl
 ├── getProviderForTask('generateTitle')
 ├── call[Provider]API
 ├── cleanupLatexDelimiters
@@ -133,8 +133,8 @@ createConceptNotes
 
 \_performResearch
 ├── SearchManager.getProvider
-�?├── TavilyProvider (if searchProvider='tavily')
-�?└── DuckDuckGoProvider (if searchProvider='duckduckgo')
+│ ├── TavilyProvider (if searchProvider='tavily')
+│ └── DuckDuckGoProvider (if searchProvider='duckduckgo')
 ├── provider.search
 ├── fetchContentFromUrl (for DDG)
 └── Combine research context
@@ -149,7 +149,7 @@ extractOriginalText
 ├── read_file(inputPath)
 ├── settings.extractQuestions (split by newline)
 ├── IF mergedMode
-�?└── callLLM with all questions combined
+│ └── callLLM with all questions combined
 └── ELSE
 └── for each question, callLLM individually
 └── save to output file
@@ -187,16 +187,16 @@ checkAndRemoveDuplicateConceptNotes
 
 main.ts
 ├── fileUtils.ts
-�?├── promptUtils.ts (getSystemPrompt)
-�?├── llmUtils.ts (call\*API functions)
-�?├── mermaidProcessor.ts (refineMermaidBlocks)
-�?└── searchUtils.ts (\_performResearch)
+│ ├── promptUtils.ts (getSystemPrompt)
+│ ├── llmUtils.ts (call\*API functions)
+│ ├── mermaidProcessor.ts (refineMermaidBlocks)
+│ └── searchUtils.ts (\_performResearch)
 ├── translate.ts
-�?├── llmUtils.ts
-�?└── promptUtils.ts
+│ ├── llmUtils.ts
+│ └── promptUtils.ts
 ├── searchUtils.ts
-�?├── llmUtils.ts
-�?└── SearchManager �?TavilyProvider/DuckDuckGoProvider
+│ ├── llmUtils.ts
+│ └── SearchManager → TavilyProvider/DuckDuckGoProvider
 ├── formulaFixer.ts
 ├── mermaidProcessor.ts
 └── utils.ts (splitContent, getProviderForTask)

@@ -1,5 +1,5 @@
 ---
-name: notemd-batch
+name: batch-processor
 description: "Use when processing 10+ markdown files in bulk, encountering HTTP 429 rate limits, or needing OOM-safe Base64 sanitization before LLM chunking"
 ---
 
@@ -73,8 +73,8 @@ batchOperation
 ├── Get list of files
 ├── Create concurrent processor
 ├── Create task functions
-�?  └── For each file
-�?      └── Process file
+│   └── For each file
+│       └── Process file
 ├── Execute with staggered start
 ├── Handle errors per file
 └── Collect results
@@ -121,7 +121,7 @@ This prevents API rate limits by distributing requests over time.
 For very large batches, delays between batches prevent overwhelming APIs:
 
 ```
-Batch 1: [====] �?delay �?Batch 2: [====] �?delay �?Batch 3: [====]
+Batch 1: [====] → delay → Batch 2: [====] → delay → Batch 3: [====]
 ```
 
 ## Error Handling Strategy

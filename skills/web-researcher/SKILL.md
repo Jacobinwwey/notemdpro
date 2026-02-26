@@ -21,13 +21,13 @@ This feature researches topics using web search providers and provides summarize
 ```
 _performResearch (searchUtils.ts)
 ├── SearchManager.getProvider(settings)
-�?  ├── TavilyProvider (if searchProvider='tavily')
-�?  └── DuckDuckGoProvider (if searchProvider='duckduckgo')
+│   ├── TavilyProvider (if searchProvider='tavily')
+│   └── DuckDuckGoProvider (if searchProvider='duckduckgo')
 ├── provider.search(query, settings)
-�?  └── Returns SearchResult[]
+│   └── Returns SearchResult[]
 ├── fetchContentFromUrl(url)  [For DuckDuckGo only]
-�?  └── requestUrl({url, method: 'GET'})
-�?  └── Extract text from HTML
+│   └── requestUrl({url, method: 'GET'})
+│   └── Extract text from HTML
 ├── Combine research context
 └── Return combined context string
 ```

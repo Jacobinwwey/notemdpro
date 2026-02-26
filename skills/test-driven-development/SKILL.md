@@ -1,5 +1,5 @@
 ---
-name: notemd-testing
+name: test-driven-development
 description: "Use when modifying core utilities like mermaidProcessor or formulaFixer, to ensure all 35 Jest regression tests pass before and after changes"
 ---
 
@@ -9,7 +9,7 @@ description: "Use when modifying core utilities like mermaidProcessor or formula
 
 The `obsidian-NoteMD_new` source project contains a robust suite of 35 Jest unit tests located in the `src/tests/` directory. When acting as an AI Agent modifying core utilities, heuristic engines, or batch processors within this skill set, you **MUST** engage this testing framework to prevent regressions.
 
-## 🛡�?The Prime Directive
+## 🛡️ The Prime Directive
 
 > [!CAUTION] Mandatory Regression Testing
 > If you modify `fileUtils.ts`, `mermaidProcessor.ts`, `formulaFixer.ts`, or any other core utility, you are required to run the local test suite and ensure all 35 mocked tests pass. Do not present a "completed" refactor to the user without terminal proof that `npm test` succeeded.

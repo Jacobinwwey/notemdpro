@@ -1,5 +1,5 @@
 ---
-name: notemd-selection
+name: selection-processor
 description: "Use when processing only a selected portion of text rather than a full file, to save tokens and enable targeted AI operations"
 ---
 

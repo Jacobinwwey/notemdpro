@@ -33,7 +33,7 @@ fixFormulaFormatsInFile
 batchFixFormulaFormatsInFolder
 ├── get files in folder (.md, .txt)
 ├── for each file
-�?  └── fixFormulaFormatsInFile
+│   └── fixFormulaFormatsInFile
 └── return: { modifiedCount, errors[] }
 ```
 

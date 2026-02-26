@@ -24,10 +24,10 @@ translateFile (translate.ts)
 ├── splitContent(content, settings)
 ├── getProviderForTask('translate', settings)
 ├── callLLM(provider, prompt, chunk)
-�?  └── Translated chunk
+│   └── Translated chunk
 ├── join translated chunks
 ├── save translated file
-�?  └── write_file(outputPath, content)
+│   └── write_file(outputPath, content)
 └── open file (if enabled)
 
 batchTranslateFolder

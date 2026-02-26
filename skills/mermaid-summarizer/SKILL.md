@@ -1,5 +1,5 @@
 ---
-name: notemd-summarize-as-mermaid
+name: mermaid-summarizer
 description: "Use when summarizing a document into a visual Mermaid mindmap diagram for study aids or knowledge mapping"
 ---
 
@@ -25,8 +25,8 @@ summarizeToMermaidCommand (main.ts)
 ├── getPromptForTask('summarizeToMermaid')
 ├── call[Provider]API(prompt, content)
 ├── saveMermaidSummaryFile(settings, inputPath, mermaidContent)
-�?  ├── mkdir_p(outputFolderPath)
-�?  └── write_file(outputPath, content)
+│   ├── mkdir_p(outputFolderPath)
+│   └── write_file(outputPath, content)
 └── [Optional] Translate output
 ```
 

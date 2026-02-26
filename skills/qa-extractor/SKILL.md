@@ -1,6 +1,6 @@
 ---
 name: notemd-extraction
-description: "Extract specific answers from text based on user-configured questions using LLM"
+description: "Use when extracting verbatim answers to specific questions from a long document, with optional translation of extracted text"
 ---
 
 # NoteMD Pro - Text Extraction (Q&A)
@@ -24,10 +24,10 @@ extractOriginalText (extractOriginalText.ts)
 ├── settings.extractQuestions (split by newlines)
 ├── getProviderAndModelForTask('extractOriginalText')
 ├── IF mergedMode
-│   └── callLLM with all questions combined
+�?  └── callLLM with all questions combined
 ├── ELSE (individual mode)
-│   └── for each question
-│       └── callLLM with single question
+�?  └── for each question
+�?      └── callLLM with single question
 ├── Format results
 └── save to output file
     ├── mkdir_p(outputFolderPath)

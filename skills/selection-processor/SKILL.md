@@ -1,6 +1,6 @@
 ---
 name: notemd-selection
-description: "Process selected text chunks within files instead of full file operations"
+description: "Use when processing only a selected portion of text rather than a full file, to save tokens and enable targeted AI operations"
 ---
 
 # NoteMD Pro - Selection-Based Processing

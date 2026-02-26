@@ -1,6 +1,6 @@
 ---
-name: notemd-translate
-description: "Translate Obsidian markdown notes to different languages using LLM"
+name: text-translator
+description: "Use when translating markdown notes to a different language while preserving formatting, images, and special elements"
 ---
 
 # NoteMD Pro - Translation
@@ -24,10 +24,10 @@ translateFile (translate.ts)
 ├── splitContent(content, settings)
 ├── getProviderForTask('translate', settings)
 ├── callLLM(provider, prompt, chunk)
-│   └── Translated chunk
+�?  └── Translated chunk
 ├── join translated chunks
 ├── save translated file
-│   └── write_file(outputPath, content)
+�?  └── write_file(outputPath, content)
 └── open file (if enabled)
 
 batchTranslateFolder

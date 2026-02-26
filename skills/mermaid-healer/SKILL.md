@@ -1,6 +1,6 @@
 ---
-name: notemd-mermaid-fix
-description: "Fix Mermaid diagram syntax errors in Obsidian markdown files"
+name: mermaid-healer
+description: "Use when mermaid diagrams have syntax errors like broken arrows, unquoted labels, or malformed subgraphs that cause render failures"
 ---
 
 # NoteMD Pro - Mermaid Diagram Fixing
@@ -22,37 +22,37 @@ refineMermaidBlocks (mermaidProcessor.ts)
 ├── split content by lines
 ├── detect ```mermaid blocks
 ├── apply fix rules in order:
-│   ├── fixSmartQuotes
-│   ├── fixMermaidPipes
-│   ├── fixMermaidNotes
-│   ├── fixNotesToNodes
-│   ├── fixMalformedArrows
-│   ├── fixInvalidArrows
-│   ├── mergeDoubleLabels
-│   ├── fixMissingBrackets
-│   ├── fixInlineSubgraphs
-│   ├── fixMermaidComments
-│   ├── fixDoubleSlashComments
-│   ├── fixUnquotedNodeLabels
-│   ├── fixIntermediateNodes
-│   ├── fixDoubledID
-│   ├── fixExcessiveBrackets
-│   ├── fixSemicolonPositioning
-│   ├── fixConcatenatedLabels
-│   ├── fixUnquotedLabelsWithSemicolons
-│   ├── enhancedNoteAndSemicolonCleanup
-│   ├── fixReverseArrows
-│   ├── fixSubgraphDirection
-│   ├── fixDuplicateLabels
-│   ├── fixNestedMermaidQuotes
-│   ├── fixQuotedLabelsAfterSemicolon
-│   ├── fixDoubleDashToArrow
-│   ├── fixTargetedNotes
-│   ├── fixDoubleArrowLabels
-│   ├── fixUnquotedEdgeLabels
-│   ├── fixShapeMismatch
-│   ├── fixPlaceholderArtifacts
-│   └── fixBlankArrows
+�?  ├── fixSmartQuotes
+�?  ├── fixMermaidPipes
+�?  ├── fixMermaidNotes
+�?  ├── fixNotesToNodes
+�?  ├── fixMalformedArrows
+�?  ├── fixInvalidArrows
+�?  ├── mergeDoubleLabels
+�?  ├── fixMissingBrackets
+�?  ├── fixInlineSubgraphs
+�?  ├── fixMermaidComments
+�?  ├── fixDoubleSlashComments
+�?  ├── fixUnquotedNodeLabels
+�?  ├── fixIntermediateNodes
+�?  ├── fixDoubledID
+�?  ├── fixExcessiveBrackets
+�?  ├── fixSemicolonPositioning
+�?  ├── fixConcatenatedLabels
+�?  ├── fixUnquotedLabelsWithSemicolons
+�?  ├── enhancedNoteAndSemicolonCleanup
+�?  ├── fixReverseArrows
+�?  ├── fixSubgraphDirection
+�?  ├── fixDuplicateLabels
+�?  ├── fixNestedMermaidQuotes
+�?  ├── fixQuotedLabelsAfterSemicolon
+�?  ├── fixDoubleDashToArrow
+�?  ├── fixTargetedNotes
+�?  ├── fixDoubleArrowLabels
+�?  ├── fixUnquotedEdgeLabels
+�?  ├── fixShapeMismatch
+�?  ├── fixPlaceholderArtifacts
+�?  └── fixBlankArrows
 ├── close unclosed blocks
 └── checkMermaidErrors (if errors found, apply deepDebugMermaid)
 
@@ -176,9 +176,9 @@ LLM-Heal-Mermaid
 ├── Extract mermaid blocks from content
 ├── Try mermaid.parse() to validate
 ├── IF errors found
-│   ├── Extract specific error messages
-│   ├── Feed errors back to LLM with prompt
-│   └── Ask for precise correction
+�?  ├── Extract specific error messages
+�?  ├── Feed errors back to LLM with prompt
+�?  └── Ask for precise correction
 ├── Replace original block with LLM-fixed version
 └── Validate again
 ```

@@ -1,6 +1,6 @@
 ---
-name: notemd-concepts
-description: "Extract key concepts from notes and create interconnected concept notes with backlinks"
+name: concept-extractor
+description: "Use when extracting core knowledge concepts from a document to build a wiki-linked knowledge graph without modifying the original file"
 ---
 
 # NoteMD Pro - Concept Extraction
@@ -29,8 +29,8 @@ extractConceptsFromFile (fileUtils.ts)
 
 createConceptNotes (fileUtils.ts)
 ├── for each concept
-│   ├── normalizeNameForFilePath(concept)
-│   └── write_file(notePath, content)
+�?  ├── normalizeNameForFilePath(concept)
+�?  └── write_file(notePath, content)
 └── generateConceptLog (if enabled)
 
 generateConceptLog

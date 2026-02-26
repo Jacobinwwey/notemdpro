@@ -1,6 +1,6 @@
 ---
-name: notemd-research
-description: "Research topics using web search (Tavily/DuckDuckGo) and summarize with LLM"
+name: web-researcher
+description: "Use when gathering web research context via Tavily or DuckDuckGo before content generation or topic summarization"
 ---
 
 # NoteMD Pro - Web Research
@@ -21,13 +21,13 @@ This feature researches topics using web search providers and provides summarize
 ```
 _performResearch (searchUtils.ts)
 ├── SearchManager.getProvider(settings)
-│   ├── TavilyProvider (if searchProvider='tavily')
-│   └── DuckDuckGoProvider (if searchProvider='duckduckgo')
+�?  ├── TavilyProvider (if searchProvider='tavily')
+�?  └── DuckDuckGoProvider (if searchProvider='duckduckgo')
 ├── provider.search(query, settings)
-│   └── Returns SearchResult[]
+�?  └── Returns SearchResult[]
 ├── fetchContentFromUrl(url)  [For DuckDuckGo only]
-│   └── requestUrl({url, method: 'GET'})
-│   └── Extract text from HTML
+�?  └── requestUrl({url, method: 'GET'})
+�?  └── Extract text from HTML
 ├── Combine research context
 └── Return combined context string
 ```

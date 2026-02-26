@@ -1,6 +1,6 @@
 ---
 name: notemd-summarize-as-mermaid
-description: "Convert document content into a Mermaid mindmap diagram using LLM"
+description: "Use when summarizing a document into a visual Mermaid mindmap diagram for study aids or knowledge mapping"
 ---
 
 # NoteMD Pro - Summarize as Mermaid Diagram
@@ -25,8 +25,8 @@ summarizeToMermaidCommand (main.ts)
 ├── getPromptForTask('summarizeToMermaid')
 ├── call[Provider]API(prompt, content)
 ├── saveMermaidSummaryFile(settings, inputPath, mermaidContent)
-│   ├── mkdir_p(outputFolderPath)
-│   └── write_file(outputPath, content)
+�?  ├── mkdir_p(outputFolderPath)
+�?  └── write_file(outputPath, content)
 └── [Optional] Translate output
 ```
 

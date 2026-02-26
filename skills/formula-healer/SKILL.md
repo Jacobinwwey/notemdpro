@@ -1,6 +1,6 @@
 ---
-name: notemd-formula-fix
-description: "Fix LaTeX math formula formatting in Obsidian markdown files"
+name: formula-healer
+description: "Use when LaTeX math delimiters are broken, single-dollar display math needs converting to double-dollar, or inline vs block math is malformatted"
 ---
 
 # NoteMD Pro - Formula Fixing
@@ -33,7 +33,7 @@ fixFormulaFormatsInFile
 batchFixFormulaFormatsInFolder
 ├── get files in folder (.md, .txt)
 ├── for each file
-│   └── fixFormulaFormatsInFile
+�?  └── fixFormulaFormatsInFile
 └── return: { modifiedCount, errors[] }
 ```
 

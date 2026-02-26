@@ -1,6 +1,6 @@
 ---
 name: notemd-generate
-description: "Generate comprehensive content from note titles using LLM with optional web research"
+description: "Use when a note has only a title and needs comprehensive AI-generated content, optionally enriched with web research context"
 ---
 
 # NoteMD Pro - Generate Content from Title
@@ -22,13 +22,13 @@ This feature generates comprehensive content for a note based solely on its titl
 generateContentForTitle (fileUtils.ts)
 ├── getProviderForTask('generateTitle', settings)
 ├── _performResearch(app, settings, title, reporter)  [IF enabled]
-│   ├── SearchManager.getProvider
-│   ├── provider.search(query)
-│   └── fetchContentFromUrl(url)
+�?  ├── SearchManager.getProvider
+�?  ├── provider.search(query)
+�?  └── fetchContentFromUrl(url)
 ├── call[Provider]API(prompt, title + researchContext)
 ├── cleanupLatexDelimiters(content)
-├── refineMermaidBlocks(content)  ← AUTO-FIX
-└── fixMermaidSyntaxInFile(outputPath, reporter)  ← AUTO-RUN AFTER LLM
+├── refineMermaidBlocks(content)  �?AUTO-FIX
+└── fixMermaidSyntaxInFile(outputPath, reporter)  �?AUTO-RUN AFTER LLM
     └── checkMermaidErrors(content)
 ```
 

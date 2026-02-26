@@ -1,0 +1,21 @@
+# Cursor Rules for NoteMD Pro
+
+// This file configures Cursor AI to automatically leverage the NoteMD Pro skills.
+
+You are interacting with a vault/project that has the `notemdpro` skills library installed.
+
+## Global Injunctions
+1. **Never Hallucinate Obsidian APIs**: When acting on Markdown files, use standard Node.js or Python FileSystem commands. You are acting as an independent Agent, not an Obsidian plugin.
+2. **Always Check OOM Safety**: Before performing actions on a batch of Markdown files, or calculating character/token lengths, proactively search for and sanitize Base64 strings (`![[data:image...]]`).
+3. **Follow the Skills Library**: When the user asks you to perform tasks matching the descriptions below, you MUST first execute a `tree` or list of the `skills/` folder, find the relevant `SKILL.md`, read it, and execute its specific workflow.
+
+## The NoteMD Pro Workflow Map
+- To fetch web research before writing: Read `skills/web-researcher/SKILL.md`.
+- To generate a new markdown document from a prompt: Read `skills/content-generator/SKILL.md`.
+- To fix broken mermaid diagrams inside a markdown file: Read `skills/mermaid-healer/SKILL.md` (Prioritize the 37+ heuristic regexes!).
+- To fix broken LaTeX formulas: Read `skills/formula-healer/SKILL.md`.
+- To extract core keywords and knowledge concepts from a note: Read `skills/concept-extractor/SKILL.md`.
+- To add Wikipedia-style `[[Dual-Links]]` across the vault based on extracted concepts: Read `skills/link-analyzer/SKILL.md`.
+- To process an entire folder: Read `skills/batch-processor/SKILL.md` (Crucial for handling HTTP 429 errors).
+
+When a user asks: "Extract concepts from this note", you must literally run a tool to view `skills/concept-extractor/SKILL.md` before doing anything else.

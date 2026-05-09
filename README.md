@@ -32,6 +32,10 @@ It starts the moment you fire up your coding agent on a Markdown vault. Instead 
 5. **`link-analyzer`**: Automate Wikipedia-style `[[Dual-Link]]` creation across the entire folder to build a knowledge graph.
 6. **`batch-processor`**: Scales out any of the above operations logically across 100+ files while intelligently dodging OOMs (by stripping raw Base64 image data) and handling HTTP 429 back-off signals.
 
+Modern NotEMD parity note:
+- Canonical diagram action naming is `generate-diagram` / `preview-diagram`.
+- Legacy `generate-experimental-diagram` should be treated as a compatibility alias that normalizes to `generate-diagram`.
+
 ### 📦 Installation
 
 This Library is framework-agnostic. Pick your Agent:
@@ -103,6 +107,10 @@ Before unleashing NoteMD Pro on your 5000-note Zettelkasten, test your Agent's b
 4. **概念提取器 (`concept-extractor`)**: 对完稿文本进行切片分析，提取核心概念节点。
 5. **链接分析师 (`link-analyzer`)**: 对提取出的概念进行全库维度的 `[[维基双链]]` 自动化构建。
 6. **批处理引擎 (`batch-processor`)**: 负责将上述任何单线操作扩展至成百上千个文件：通过主动清理超长 Base64 图片来杜绝内存溢出 (OOM) 并应对 HTTP 429 的指数退避。
+
+与新版 NotEMD 对齐说明：
+- 图表 canonical action 命名为 `generate-diagram` / `preview-diagram`。
+- 旧命名 `generate-experimental-diagram` 作为兼容别名，应归一化到 `generate-diagram`。
 
 ### 📦 安装方式
 

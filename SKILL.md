@@ -1,143 +1,76 @@
 ---
 name: notemdpro
-description: "Obsidian NoteMD Pro - AI-powered note enhancement plugin. When Claude needs to work with Obsidian notes for: (1) Adding wiki-links between concepts, (2) Generating content from titles, (3) Web research and summarization, (4) Translation, (5) Concept extraction and management, (6) Mermaid diagram fixing, or (7) LaTeX formula fixing"
+description: "NoteMD Pro skill pack for markdown knowledge workflows: linking, generation, research, translation, concept extraction, diagram generation, and syntax healing."
 ---
 
-# NoteMD Pro - Obsidian Plugin Skills
+# NoteMD Pro - Skill Router
 
 ## Overview
 
-NoteMD Pro is an Obsidian plugin that enhances your note-taking with AI capabilities. It provides multiple workflows for note management, content generation, and syntax fixing.
+`notemdpro` is a portable skill library that mirrors modern NotEMD workflows for non-Obsidian runtimes.
+Use this file as the top-level router to select the correct skill folder.
 
 ## Workflow Decision Tree
 
-### Content Enhancement
-- **Add wiki-links** → Use "notemd-links" skill
-- **Generate content from title** → Use "notemd-generate" skill
-- **Extract concepts** → Use "notemd-concepts" skill
-- **Summarize as Mermaid** → Use "notemd-summarize-as-mermaid" skill
+### Content + Knowledge Graph
+- Add wiki-links to existing notes -> `skills/link-analyzer/SKILL.md`
+- Generate long-form content from title/topic -> `skills/content-generator/SKILL.md`
+- Extract core concepts from documents -> `skills/concept-extractor/SKILL.md`
+- Process a selected excerpt instead of full file -> `skills/selection-processor/SKILL.md`
 
-### Research & Translation
-- **Web research** → Use "notemd-research" skill
-- **Translate notes** → Use "notemd-translate" skill
+### Research + Translation
+- Perform web research and summarize findings -> `skills/web-researcher/SKILL.md`
+- Translate documents while preserving markdown -> `skills/text-translator/SKILL.md`
 
-### Data Extraction
-- **Q&A extraction** → Use "notemd-extraction" skill
+### Diagram Workflows
+- Summarize document into Mermaid mindmap -> `skills/mermaid-summarizer/SKILL.md`
+- Generate canonical diagram flow (NotEMD parity): `generate-diagram`
+- Legacy compatibility alias (NotEMD parity): `generate-experimental-diagram` -> normalize to `generate-diagram`
+- Preview command parity reference: `preview-diagram` (UI/runtime-specific in plugin; keep as conceptual action in skill docs)
 
-### Syntax Fixing
-- **Fix Mermaid diagrams** → Use "notemd-mermaid-fix" skill
-- **Fix LaTeX formulas** → Use "notemd-formula-fix" skill
+### Syntax Healing
+- Heal Mermaid syntax with regex-first pipeline -> `skills/mermaid-healer/SKILL.md`
+- Heal LaTeX math formatting -> `skills/formula-healer/SKILL.md`
 
-### Processing
-- **Batch operations** → Use "notemd-batch" skill
-- **Auto link refactoring** → Use "notemd-architecture" skill (Vault listeners)
+### Extraction + Batch
+- Extract Q&A or targeted passages -> `skills/qa-extractor/SKILL.md`
+- Run workflows over many files safely -> `skills/batch-processor/SKILL.md`
 
-### Architecture
-- **Understand system design** → Use "notemd-architecture" skill
+### Architecture + Engineering
+- Understand system composition and call chains -> `skills/system-architecture/SKILL.md`
+- Apply TDD workflow for new changes -> `skills/test-driven-development/SKILL.md`
 
 ## Skills Index
 
-| Skill | Description |
-|-------|-------------|
-| [notemd-links](links/SKILL.md) | Add wiki-links between concepts in markdown files |
-| [notemd-generate](generate/SKILL.md) | Generate comprehensive content from note titles |
-| [notemd-research](research/SKILL.md) | Research topics using web search and summarize |
-| [notemd-translate](translate/SKILL.md) | Translate notes to different languages |
-| [notemd-concepts](concepts/SKILL.md) | Extract concepts and create interconnected notes |
-| [notemd-extraction](extraction/SKILL.md) | Extract Q&A from text based on questions |
-| [notemd-summarize-as-mermaid](summarize-as-mermaid/SKILL.md) | Convert documents to Mermaid mindmaps |
-| [notemd-mermaid-fix](mermaid-fix/SKILL.md) | Fix Mermaid diagram syntax errors |
-| [notemd-formula-fix](formula-fix/SKILL.md) | Fix LaTeX formula formatting |
-| [notemd-batch](batch/SKILL.md) | Batch processing with concurrency control |
-| [notemd-architecture](architecture/SKILL.md) | System architecture and dependencies |
+| Skill Folder | Purpose |
+| --- | --- |
+| `skills/link-analyzer` | Add/update `[[wiki-links]]` in markdown |
+| `skills/content-generator` | Generate technical markdown from title/topic |
+| `skills/web-researcher` | Web research + synthesis |
+| `skills/text-translator` | Translate markdown content |
+| `skills/concept-extractor` | Extract concept nodes for graph building |
+| `skills/qa-extractor` | Extract answers from reference text |
+| `skills/selection-processor` | Process selected text spans only |
+| `skills/mermaid-summarizer` | Create Mermaid summary diagrams |
+| `skills/mermaid-healer` | Repair Mermaid syntax |
+| `skills/formula-healer` | Repair LaTeX syntax |
+| `skills/batch-processor` | Batch execution patterns |
+| `skills/system-architecture` | Runtime architecture map |
+| `skills/test-driven-development` | TDD planning and execution |
 
-## Supported LLM Providers
+## Prompt Variable Reference
 
-The plugin supports 9 LLM providers:
-- OpenAI
-- DeepSeek
-- Anthropic
-- Google
-- Mistral
-- Azure OpenAI
-- LMStudio
-- Ollama
-- OpenRouter
+| Variable | Typical Use |
+| --- | --- |
+| `{TITLE}` | Title-driven generation |
+| `{LANGUAGE}` | Translation/target output language |
+| `{TEXT}` | Raw content payload |
+| `{REFERENCE_CONTENT}` | Reference corpus for extraction |
+| `{USER_INPUT}` | Query/question payload |
+| `{TOPIC}` | Research topic |
+| `{SEARCH_RESULTS_CONTEXT}` | Search snippets/context |
 
-## Key Features
+## Notes
 
-1. **Batch Processing**: Process multiple files with concurrency control
-2. **Custom Prompts**: Configure prompts for each task type
-3. **Multi-language Support**: Generate content in different languages
-4. **Auto-fix**: Automatic Mermaid and formula fixing after generation
-5. **Progress Reporting**: Real-time progress with cancellation support
-
-## Dynamic Prompt Injection
-
-Prompts can be customized dynamically without editing skill files:
-
-### Prompt Variables
-
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `{TITLE}` | Note title for generation | "Neural Networks" |
-| `{LANGUAGE}` | Target language | "Spanish" |
-| `{TEXT}` | Content to process | File content |
-| `{REFERENCE_CONTENT}` | Context for extraction | Full document |
-| `{USER_INPUT}` | User question | "What is..." |
-| `{TOPIC}` | Research topic | "Quantum Computing" |
-| `{SEARCH_RESULTS_CONTEXT}` | Web search results | Combined snippets |
-
-### Customizing Prompts
-
-#### Method 1: Settings Configuration
-```typescript
-// In settings, customize prompts:
-settings.customPromptAddLinks = `Your custom prompt here with {VARIABLES}`;
-settings.customPromptGenerateTitle = `Another custom prompt`;
-```
-
-#### Method 2: Runtime Injection
-```typescript
-function getDynamicPrompt(basePrompt: string, variables: Record<string, string>): string {
-    let prompt = basePrompt;
-    for (const [key, value] of Object.entries(variables)) {
-        prompt = prompt.replace(new RegExp(`{${key}}`, 'g'), value);
-    }
-    return prompt;
-}
-
-// Usage
-const prompt = getDynamicPrompt(DEFAULT_PROMPTS.generateTitle, {
-    TITLE: "Machine Learning",
-    RESEARCH_CONTEXT_SECTION: context
-});
-```
-
-#### Method 3: LLM-Guided Adaptation
-```
-User: "Generate a simpler explanation"
-AI: Adjusts prompt to reduce technical depth
-
-User: "Make it more academic"
-AI: Adjusts prompt for formal tone
-```
-
-### Prompt Templates by Task
-
-| Task | Default Variables |
-|------|------------------|
-| addLinks | content chunk |
-| generateTitle | TITLE, RESEARCH_CONTEXT_SECTION |
-| translate | LANGUAGE, TEXT |
-| researchSummarize | TOPIC, SEARCH_RESULTS_CONTEXT, LANGUAGE |
-| extractConcepts | REFERENCE_CONTENT |
-| extractOriginalText | REFERENCE_CONTENT, USER_INPUT |
-| summarizeToMermaid | document content |
-
-### Best Practices
-
-1. **Keep variables in braces**: `{VARIABLE}`
-2. **Provide fallback**: Handle missing variables
-3. **Validate prompts**: Test before production
-4. **Version control**: Track prompt changes
+- Keep workflows file-system agnostic: avoid direct Obsidian API assumptions when running outside plugin runtime.
+- For diagram command migration, prefer canonical action naming (`generate-diagram`, `preview-diagram`) and keep legacy alias compatibility where needed.
